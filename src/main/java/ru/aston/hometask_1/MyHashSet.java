@@ -1,3 +1,5 @@
+package ru.aston.hometask_1;
+
 public class MyHashSet {
 
     private static final int INITIAL_CAPACITY = 16;

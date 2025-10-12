@@ -1,3 +1,5 @@
+package ru.aston.hometask_1;
+
 import java.util.ArrayList;
 
 public class Main {

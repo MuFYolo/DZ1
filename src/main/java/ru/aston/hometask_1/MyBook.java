@@ -1,3 +1,5 @@
+package ru.aston.hometask_1;
+
 public class MyBook {
     private String name;
     private String author;
