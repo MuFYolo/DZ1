@@ -12,46 +12,45 @@ public class Main {
             while (!input.equals("stop")) {
                 switch (input) {
                     case "Is file exist":
-                        commands.examplePath();
+                        Commands.examplePath();
                         System.out.print("Enter path: ");
-                        commands.isFileExist(scanner.nextLine());
+                        Commands.isFileExist(scanner.nextLine());
                         break;
                     case "Is directory exist":
-                        commands.examplePath();
+                        Commands.examplePath();
                         System.out.print("Enter path: ");
-                        commands.isDirectoryExist(scanner.nextLine());
+                        Commands.isDirectoryExist(scanner.nextLine());
                         break;
                     case "Create file":
-                        commands.examplePath();
+                        Commands.examplePath();
                         System.out.print("Enter path: ");
                         String directory = scanner.nextLine();
-                        commands.exampleName();
+                        Commands.exampleName();
                         System.out.print("Enter file name: ");
-                        commands.createFile(directory, scanner.nextLine());
+                        Commands.createFile(directory, scanner.nextLine());
                         break;
                     case "Create directory":
-                        commands.examplePath();
+                        Commands.examplePath();
                         System.out.println("Enter path: ");
-                        commands.createDirectory(scanner.nextLine());
+                        Commands.createDirectory(scanner.nextLine());
                         break;
                     case "Write":
-                        commands.examplePathToFile();
+                        Commands.examplePathToFile();
                         System.out.println("Enter path to file");
                         String path = scanner.nextLine();
                         System.out.println("Enter data");
-                        commands.writeToFile(path, scanner.nextLine());
+                        Commands.writeToFile(path, scanner.nextLine());
                         break;
                     case "Read":
-                        commands.examplePathToFile();
+                        Commands.examplePathToFile();
                         System.out.println("Enter path to file");
-                        commands.readFromFile(scanner.nextLine());
+                        Commands.readFromFile(scanner.nextLine());
                         break;
                     case "Help":
-                        commands.help();
+                        Commands.help();
                         break;
                     default:
                         System.out.println("Not a command");
-                        ;
                 }
                 input = scanner.nextLine();
             }

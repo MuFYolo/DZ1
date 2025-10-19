@@ -8,11 +8,11 @@ public class FileReader implements FileReaderInterface {
     @Override
     public void readFromFile(String path) {
         try {
-                List<String> reader = Files.readAllLines(Path.of(path));
+            List<String> reader = Files.readAllLines(Path.of(path));
 
-                for (String text : reader) {
-                    System.out.println(text);
-                }
+            for (String text : reader) {
+                System.out.println(text);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

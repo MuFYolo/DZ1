@@ -1,26 +1,22 @@
 package ru.aston.hometask_2;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-
-public enum commands {
-    ifExist("Exist"),
-    ifNotExist("Not exist");
+public enum Commands {
+    IF_EXISTS("Exist"),
+    IF_NOT_EXIST("Not exist");
 
     private String value;
 
-    commands(String value) {
+    Commands(String value) {
         this.value = value;
     }
 
     public static boolean isFileExist(String path) {
         IsExist isExist = new IsExist();
         if (isExist.fileExist(path)) {
-            System.out.println(ifExist.value);
+            System.out.println(IF_EXISTS.value);
             return true;
         } else {
-            System.out.println(ifNotExist.value);
+            System.out.println(IF_NOT_EXIST.value);
             return false;
         }
     }
@@ -28,10 +24,10 @@ public enum commands {
     public static boolean isDirectoryExist(String path) {
         IsExist isExist = new IsExist();
         if (isExist.directoryExist(path)) {
-            System.out.println(ifExist.value);
+            System.out.println(IF_EXISTS.value);
             return true;
         } else {
-            System.out.println(ifNotExist.value);
+            System.out.println(IF_NOT_EXIST.value);
             return false;
         }
     }
@@ -39,20 +35,20 @@ public enum commands {
     public static String createFile(String path, String name) {
         IsExist isExist = new IsExist();
         if (isExist.fileExist(path + "/" + name)) {
-            System.out.println(ifExist.value);
-            return ifExist.value;
+            System.out.println(IF_EXISTS.value);
+            return IF_EXISTS.value;
         } else {
             FileWriter fileWriter = new FileWriter();
             fileWriter.createFile(path + "/" + name);
             System.out.println("File Created");
-            return ifNotExist.value;
+            return IF_NOT_EXIST.value;
         }
     }
 
     public static void createDirectory(String path) {
         IsExist isExist = new IsExist();
         if (isExist.fileExist(path)) {
-            System.out.println(ifExist.value);
+            System.out.println(IF_EXISTS.value);
         } else {
             FileWriter fileWriter = new FileWriter();
             fileWriter.createDirectory(path);
@@ -67,7 +63,7 @@ public enum commands {
             fileWriter.writeToFile(path, data);
             System.out.println("Date written");
         } else {
-            System.out.println(ifNotExist.value);
+            System.out.println(IF_NOT_EXIST.value);
         }
     }
 
@@ -77,7 +73,7 @@ public enum commands {
             FileReader fileReader = new FileReader();
             fileReader.readFromFile(path);
         } else {
-            commands.isFileExist(path);
+            Commands.isFileExist(path);
         }
     }
 
